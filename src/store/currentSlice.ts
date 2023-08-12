@@ -14,7 +14,7 @@ import {createSlice} from '@reduxjs/toolkit';
 //     steps: ISet
 // }
 
-const initialCurrentData: any = {
+const initialCurrentData: {exerciseStarted: boolean} = {
   exerciseStarted: false,
 };
 
