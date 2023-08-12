@@ -1,8 +1,7 @@
 {
   "extends": [
-    "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:react/recommended"
+    "plugin:prettier/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "plugins": [
@@ -12,13 +11,13 @@
   "root": true,
   "env": {
     "node": true,
-    "es2022": true
+    "es6": true
   },
   "rules": {
     "react/jsx-uses-react": "off",
     "react/react-in-jsx-scope": "off",
     "max-len": [
-      2,
+      0,
       80,
       4,
       {
