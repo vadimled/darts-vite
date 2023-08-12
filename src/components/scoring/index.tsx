@@ -1,1 +1,1 @@
-export { default } from './scoring';
+export {default} from './scoring';

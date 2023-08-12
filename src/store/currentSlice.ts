@@ -14,15 +14,15 @@ import {createSlice} from '@reduxjs/toolkit';
 //     steps: ISet
 // }
 
-const initialCurrentData: any =  {
-    exerciseStarted: false
+const initialCurrentData: any = {
+  exerciseStarted: false,
 };
 
 const currentSlice = createSlice({
-    initialState: initialCurrentData,
-    name: 'current',
-    reducers: {},
-    extraReducers: undefined
+  initialState: initialCurrentData,
+  name: 'current',
+  reducers: {},
+  extraReducers: undefined,
 });
 
 export default currentSlice.reducer;
