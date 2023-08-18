@@ -1,10 +1,49 @@
 .exercise-wrapper {
   display: flex;
   width: 100vw;
-  height: calc((100vh - 60px) / 2);
+  height: calc((100vh - 130px));
+  flex-direction: column;
+  align-items: center;
 
-  button {
-    width: 100px;
+  .exercise-actions {
+    display: flex;
+    width: 100vw;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 16px;
+  }
+
+  .exercise-cards-wrapper {
+    display: flex;
+    width: 100vw;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 16px;
+  }
+
+  .start-exercise-btn {
+    width: 150px;
     height: 60px;
+  }
+  .successes-times {
+    width: 150px;
+    height: 60px;
+  }
+  .step-counter {
+    width: 350px;
+    height: 350px;
+    background-color: #41881e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #d9d9d9;
+    font-size: 150px;
+    font-weight: 600;
+
+    &.last-step{
+      background-color: #44c903;
+      color: #ab0303;
+    }
   }
 }
