@@ -3,14 +3,14 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
-    'plugin:prettier/recommended'
+    'plugin:prettier/recommended',
   ],
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint', 'react', 'prettier'],
   root: true,
   env: {
     node: true,
-    es2022: true
+    es2022: true,
   },
   rules: {
     'react/jsx-uses-react': 'off',
@@ -21,8 +21,8 @@ module.exports = {
       4,
       {
         ignorePattern: '^import\\s.+\\sfrom\\s.+;$',
-        ignoreUrls: true
-      }
+        ignoreUrls: true,
+      },
     ],
     indent: [0, 2],
     semi: [1, 'always'],
@@ -32,16 +32,26 @@ module.exports = {
       {
         max: 1,
         maxBOF: 0,
-        maxEOF: 0
-      }
+        maxEOF: 0,
+      },
     ],
     'keyword-spacing': [
       'error',
       {
         before: true,
-        after: true
-      }
+        after: true,
+      },
     ],
-    'object-shorthand': ['error', 'always']
-  }
+    'object-shorthand': ['error', 'always'],
+    'comma-dangle': [
+      'error',
+      {
+        arrays: 'always-multiline',
+        objects: 'always-multiline',
+        imports: 'always-multiline',
+        exports: 'always-multiline',
+        functions: 'always-multiline',
+      },
+    ],
+  },
 };
