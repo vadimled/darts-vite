@@ -8,7 +8,7 @@ export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 
 const actions = {
   ...currentSliceAction,
-  ...userSliceAction
+  ...userSliceAction,
 };
 
 export const useActions = () => {

@@ -4,7 +4,7 @@ import {
   getCurrentExercise,
   getExercises,
   getExerciseState,
-  getStepCounter
+  getStepCounter,
 } from '../../store/selectors/current-selectors';
 import { Button, InputNumber } from 'antd';
 import {
@@ -12,7 +12,7 @@ import {
   useEffect,
   useLayoutEffect,
   useRef,
-  useState
+  useState,
 } from 'react';
 import ExerciseCard from '../../components/exercise-card';
 import cn from 'classnames';
@@ -31,7 +31,7 @@ const Exercise = () => {
   const {
     SET_EXERCISE_STATE_CHANGED,
     SET_EXERCISE_RESULT,
-    SET_EXERCISE_FINISHED
+    SET_EXERCISE_FINISHED,
   } = useActions();
   const [inputValue, setInputValue] = useState<null | number>(null);
 
@@ -116,7 +116,7 @@ const Exercise = () => {
       {stepCounter > 0 && (
         <div
           className={cn('step-counter', {
-            'last-step': stepCounter === STEPS_LIMIT
+            'last-step': stepCounter === STEPS_LIMIT,
           })}>
           {stepCounter}
         </div>
