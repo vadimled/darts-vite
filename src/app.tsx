@@ -1,7 +1,7 @@
 import './app.scss';
 import { FC } from 'react';
 import { createBrowserRouter, Link, RouterProvider } from 'react-router-dom';
-import { MainLayout } from './components/mainLayout/MainLayout/MainLayout';
+import { MainLayout } from './components/mainLayout/MainLayout/mainLayout';
 import Landing from './pages/landing/landing';
 
 const App: FC = () => {
@@ -35,19 +35,6 @@ const App: FC = () => {
       ],
     },
   ]);
-  /*const exerciseResult = useAppSelector(getExerciseResult);
-  const exercises = useAppSelector(getExercises);
-  const { SAVE_EXERCISES_RESULT, CLEAR_CURRENT_DATA } = useActions();
-  const { data, isLoading, isError } = useGetUserDataQuery('vadim');
-  console.log({ data, isLoading, isError });
-  // const _data = JSON.stringify(data.items, null, 2);
-
-  useEffect(() => {
-    if (exerciseResult > 0) {
-      SAVE_EXERCISES_RESULT({ exercises, exerciseResult });
-      CLEAR_CURRENT_DATA();
-    }
-  }, [exerciseResult]);*/
 
   return <RouterProvider router={router} fallbackElement={<p>Loading...</p>} />;
 };
