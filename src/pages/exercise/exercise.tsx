@@ -19,7 +19,7 @@ import cn from 'classnames';
 import { STEPS_LIMIT } from '../../utils/constants';
 import { getExerciseResult } from '../../store/selectors/user-selector';
 
-const Exercise = () => {
+export const Exercise = () => {
   const exerciseState = useAppSelector(getExerciseState);
   const currentExercise = useAppSelector(getCurrentExercise);
   const stepCounter = useAppSelector(getStepCounter);
@@ -124,5 +124,3 @@ const Exercise = () => {
     </div>
   );
 };
-
-export default Exercise;
