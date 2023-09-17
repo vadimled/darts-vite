@@ -1,3 +1,49 @@
-.MainLayout {
+.main-layout-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100hw;
+  height: 100vw;
+  padding: 16px;
 
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    background-color: #325780;
+    height: 40px;
+    padding: 16px;
+
+    .logo-side {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      height: 40px;
+
+      h1 {
+        color: white;
+      }
+    }
+
+    .nav-side {
+      nav {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        ul {
+          display: flex;
+          flex-direction: row;
+          list-style-type: none;
+          padding: 0 16px;
+          gap: 16px;
+
+          a {
+            text-decoration: none;
+            color: aqua;
+          }
+        }
+      }
+    }
+  }
 }
