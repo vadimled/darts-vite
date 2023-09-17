@@ -21,14 +21,14 @@ const initialCurrentData: ICurrent = {
     { SP: 0 }, // set of points (try set maximum points)
     { HBR: 0 }, // half big round(1-10)
     { BR: 0 }, // big round(1-20)
-    { '14': 0 } // doubles
-  ]
+    { '14': 0 }, // doubles
+  ],
 };
 
 const currentSlice = createSlice({
   initialState: {
     result: 0,
-    set: { ...initialCurrentData }
+    set: { ...initialCurrentData },
   },
   name: 'current',
   reducers: {
@@ -61,9 +61,9 @@ const currentSlice = createSlice({
     },
     CLEAR_CURRENT_DATA: (state) => {
       state.set = { ...initialCurrentData };
-    }
+    },
   },
-  extraReducers: undefined
+  extraReducers: undefined,
 });
 
 export const currentSliceAction = currentSlice.actions;

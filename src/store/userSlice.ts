@@ -20,13 +20,13 @@ type IExerciseCurrentResult = Omit<IExercise, 'name' | 'date'>;
 const initialUserData: IUserData = {
   // https://www.youtube.com/watch?v=H6gOjEwe874
   // 10 sets
-  exercises: []
+  exercises: [],
 };
 
 const userSlice = createSlice({
   initialState: {
     userName: 'Vadim',
-    userData: initialUserData
+    userData: initialUserData,
   },
   name: 'user',
   reducers: {
@@ -36,11 +36,11 @@ const userSlice = createSlice({
         name: 'Complex 1',
         date: new Date(),
         exerciseResult,
-        exercises
+        exercises,
       } as IExercise);
-    }
+    },
   },
-  extraReducers: undefined
+  extraReducers: undefined,
 });
 
 export const userSliceReducer = userSlice.reducer;
