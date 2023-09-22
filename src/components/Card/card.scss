@@ -1,3 +1,21 @@
-.Card {
-
+.card {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  //border: 1px solid #ccc;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  &:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-4px);
+  }
+  &:active {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transform: translateY(0);
+  }
+  .icon-container {
+    // Style for icon container
+  }
+  .icon {
+    // Style for the icon
+  }
 }

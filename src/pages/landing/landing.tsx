@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import './landing.scss';
 import Card from '../../components/Card/card';
+import { cardData } from '../../utils/utils';
 
 interface ILanding {}
 const Landing: FC<ILanding> = () => {
@@ -17,19 +18,22 @@ const Landing: FC<ILanding> = () => {
      CLEAR_CURRENT_DATA();
    }
  }, [exerciseResult]);*/
+  // Function to handle clicks on cards
+  const handleCardClick = (title: string) => {
+    console.log(`Clicked on ${title}`);
+  };
+
   return (
     <main className='main-content'>
       <div className='card-container'>
-        <Card
-          title='Training'
-          description={`Improve your dart skills with our 
-          top-notch training programs.`}
-        />
-        <Card title='Game' description='Play darts and compete with others.' />
-        <Card
-          title='Results Analytics'
-          description='Analyze your game performance with detailed statistics.'
-        />
+        {cardData.map((card, index) => (
+          <Card
+            key={index}
+            title={card.title}
+            description={card.description}
+            onClick={() => handleCardClick(card.title)}
+          />
+        ))}{' '}
       </div>{' '}
     </main>
   );
