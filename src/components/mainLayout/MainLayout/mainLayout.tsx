@@ -14,7 +14,7 @@ export const MainLayout: FC<MainLayoutProps> = () => {
         </div>
         <div className='nav-side'>
           {navigation.state !== 'idle' ? (
-            <div style={{ position: 'fixed', top: 0, right: 0 }}>
+            <div className='nav-loading'>
               <p>Navigation in progress...</p>
             </div>
           ) : (
@@ -32,9 +32,9 @@ export const MainLayout: FC<MainLayoutProps> = () => {
         </div>
       </div>
 
-      <hr />
-
-      <Outlet />
+      <div className='outlet-wrapper'>
+        <Outlet />
+      </div>
     </div>
   );
 };

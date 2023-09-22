@@ -1,13 +1,13 @@
 .main-layout-wrapper {
   display: flex;
   flex-direction: column;
-  width: 100hw;
+  align-items: center;
+  width: 100%;
   height: 100vw;
-  padding: 16px;
 
   .header {
     display: flex;
-    justify-content: space-between;
+    width: 100%;
     align-items: center;
     flex-direction: row;
     background-color: #325780;
@@ -19,6 +19,7 @@
       justify-content: start;
       align-items: center;
       height: 40px;
+      padding: 16px;
 
       h1 {
         color: white;
@@ -26,6 +27,14 @@
     }
 
     .nav-side {
+      margin-left: auto;
+
+      .nav-loading{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        color: coral;
+      }
       nav {
         display: flex;
         justify-content: flex-start;
@@ -45,5 +54,13 @@
         }
       }
     }
+  }
+  .outlet-wrapper{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 80vw;
+    height: 100vw;
+    background-color: rgba(106, 234, 245, 0.14);
   }
 }

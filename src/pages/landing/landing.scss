@@ -1,3 +1,28 @@
-.Lending {
-  //css styles
+// Variables
+$primary-color: #0D6EFD;
+$secondary-color: #FFFFFF;
+$tertiary-color: #CCCCCC;
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.main-content {
+  section {
+    margin-bottom: 1rem;
+
+    h2 {
+      margin-bottom: 0.5rem;
+      color: $primary-color;
+    }
+  }
+}
+
+.footer {
+  text-align: center;
+  color: $primary-color;
+}
+
