@@ -33,8 +33,8 @@ const Landing: FC<ILanding> = () => {
             description={card.description}
             onClick={() => handleCardClick(card.title)}
           />
-        ))}{' '}
-      </div>{' '}
+        ))}
+      </div>
     </main>
   );
 };
