@@ -81,6 +81,7 @@ export const Exercise = () => {
           active={currentExercise === name}
           name={name}
           score={score}
+          stepCounter={0}
         />
       );
     });

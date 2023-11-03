@@ -3,20 +3,22 @@
   width: 480px;
   height: 200px;
   flex-direction: column;
-  //border: 1px solid #CCCCCC;
+  border-radius: 16px;
   padding: 8px;
   background-color: #575a6e;
   box-shadow: 0 16px 19px 0 rgba(0, 0, 0, 0.43);
   transition: all 0.4s ease;
+  gap: 8px;
+  color: #dee1f9;
 
-  &.active-card{
+  &.active-card {
     width: 200px;
     height: 220px;
     background-color: #4d4f60;
     box-shadow: 0 0 6px 3px rgb(0 216 0 / 28%);
     transition: all 1s ease;
   }
-  .exercise-card-header{
+  .exercise-card-header {
     height: 30px;
     display: flex;
     justify-content: flex-start;
@@ -24,16 +26,57 @@
     background-color: #4d4f60;
     padding: 8px;
 
-    .exercise-name{
+    .exercise-name {
       width: auto;
-      color: #dee1f9;
       //font-weight: bold;
       font-family: 'Droid Sans', sans-serif;
       font-size: 24px;
     }
   }
+  .exercise-card-content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #4d4f60;
+    padding: 8px;
+    height: inherit;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
 
-  .exercise-score{
-    font-size: xxx-large;
+    .exercise-scoring-container{
+      .exercise-score {
+        display: flex;
+        justify-content: center;
+        font-size: xxx-large;
+        min-width: 120px;
+      }
+
+      .step-counter {
+        min-width: 120px;
+        height: 75px;
+        background-color: #41881e;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #d9d9d9;
+        font-size: 45px;
+        font-weight: 600;
+
+        &.last-step{
+          background-color: #44c903;
+          color: #ab0303;
+        }
+      }
+
+    }
+
+    .exercise-chart {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      background-color: #f6f7f9;
+      flex-grow: 1;
+    }
   }
 }

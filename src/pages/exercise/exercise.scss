@@ -4,6 +4,7 @@
   height: calc((100vh - 130px));
   flex-direction: column;
   align-items: center;
+  padding: 0 24px;
 
   .exercise-actions {
     display: flex;
@@ -30,21 +31,5 @@
   .successes-times {
     width: 150px;
     height: 60px;
-  }
-  .step-counter {
-    width: 350px;
-    height: 350px;
-    background-color: #41881e;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #d9d9d9;
-    font-size: 150px;
-    font-weight: 600;
-
-    &.last-step{
-      background-color: #44c903;
-      color: #ab0303;
-    }
   }
 }
