@@ -1,35 +1,30 @@
 .exercise-wrapper {
   display: flex;
-  width: 100vw;
-  height: calc((100vh - 130px));
   flex-direction: column;
   align-items: center;
-  padding: 0 24px;
+  background-color: #2c3e50; // dark blue color
+  padding: 1rem;
 
   .exercise-actions {
     display: flex;
-    width: 100vw;
-    justify-content: space-around;
-    align-items: flex-start;
-    padding: 16px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+
+    .start-exercise-btn {
+      margin-right: 1rem;
+      background-color: #34495e; // slightly lighter blue
+    }
+
+    .successes-times {
+      width: 150px;
+    }
   }
 
   .exercise-cards-wrapper {
     display: flex;
-    width: 100vw;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: flex-start;
-    gap: 60px;
-    padding: 16px;
-  }
-
-  .start-exercise-btn {
-    width: 150px;
-    height: 60px;
-  }
-  .successes-times {
-    width: 150px;
-    height: 60px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
   }
 }

@@ -6,40 +6,20 @@ import {
   getExerciseState,
   getStepCounter,
 } from '../../store/selectors/current-selectors';
-import { Button, InputNumber } from 'antd';
-import {
-  KeyboardEvent,
-  useEffect,
-  useLayoutEffect,
-  useRef,
-  useState,
-} from 'react';
+import { Button } from 'antd';
+import { useLayoutEffect, useRef } from 'react';
 import ExerciseCard from '../../components/exercise-card';
-import cn from 'classnames';
-import { STEPS_LIMIT } from '../../utils/constants';
 import { getExerciseResult } from '../../store/selectors/user-selector';
 
 export const Exercise = () => {
   const exerciseState = useAppSelector(getExerciseState);
   const currentExercise = useAppSelector(getCurrentExercise);
-  const stepCounter = useAppSelector(getStepCounter);
+  useAppSelector(getStepCounter);
   const exercises = useAppSelector(getExercises);
   const exerciseResult = useAppSelector(getExerciseResult);
-  const inputRef = useRef<HTMLInputElement>(null);
   const btnRef = useRef<HTMLButtonElement>(null);
 
-  const {
-    SET_EXERCISE_STATE_CHANGED,
-    SET_EXERCISE_RESULT,
-    SET_EXERCISE_FINISHED,
-  } = useActions();
-  const [inputValue, setInputValue] = useState<null | number>(null);
-
-  useLayoutEffect(() => {
-    if (inputRef) {
-      inputRef.current?.focus();
-    }
-  }, [stepCounter, exerciseState]);
+  const { SET_EXERCISE_STATE_CHANGED } = useActions();
 
   useLayoutEffect(() => {
     if (btnRef && exerciseResult === 0) {
@@ -47,27 +27,8 @@ export const Exercise = () => {
     }
   }, [exerciseState]);
 
-  useEffect(() => {
-    if (stepCounter > STEPS_LIMIT) {
-      SET_EXERCISE_FINISHED();
-    }
-  }, [stepCounter]);
-
   const onExerciseState = () => {
     SET_EXERCISE_STATE_CHANGED();
-  };
-
-  const onResultEntered = (e: KeyboardEvent<HTMLInputElement>) => {
-    if ((e as KeyboardEvent).key === 'Enter') {
-      SET_EXERCISE_RESULT(inputValue);
-      setInputValue(null);
-    }
-  };
-  const onChange = (e: number | null) => {
-    if (inputRef) {
-      inputRef.current?.focus();
-    }
-    e && setInputValue(+e);
   };
 
   const renderCards = () => {
@@ -81,7 +42,6 @@ export const Exercise = () => {
           active={currentExercise === name}
           name={name}
           score={score}
-          stepCounter={0}
         />
       );
     });
@@ -100,28 +60,8 @@ export const Exercise = () => {
           onClick={onExerciseState}>
           Start Exercise
         </Button>
-        {exerciseState && (
-          <InputNumber
-            ref={inputRef}
-            className='successes-times'
-            name='enteredResults'
-            // inputMode='numeric'
-            value={inputValue as number}
-            onKeyDown={onResultEntered}
-            controls={false}
-            onChange={onChange}
-          />
-        )}
       </div>
       <div className='exercise-cards-wrapper'> {renderCards()} </div>
-      {stepCounter > 0 && (
-        <div
-          className={cn('step-counter', {
-            'last-step': stepCounter === STEPS_LIMIT,
-          })}>
-          {stepCounter}
-        </div>
-      )}
     </div>
   );
 };
