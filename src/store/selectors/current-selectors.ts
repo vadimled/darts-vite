@@ -1,4 +1,6 @@
 import { RootState } from '../store';
+import { createDraftSafeSelector } from '@reduxjs/toolkit';
+import { ISet } from '../userSlice';
 
 export const getExerciseState = (state: RootState) =>
   state.current?.set?.exerciseStarted;
@@ -13,8 +15,13 @@ export const getStepCounter = (state: RootState) =>
 
 export const getExercises = (state: RootState) => state.current?.set?.exercises;
 
-// export const getStepResult = createDraftSafeSelector(
-//   getCurrentStep,
-//   getSteps,
-//   (key, obj) => obj?.[key]
-// );
+const getCurrentExerciseNumber = (state: RootState) =>
+  state.current?.set?.currentExerciseNumber;
+
+export const getCurrStepLimit = createDraftSafeSelector(
+  getExercises,
+  getCurrentExerciseNumber,
+  (exercises: ISet[], index: number) => {
+    return exercises[index].steps;
+  },
+);

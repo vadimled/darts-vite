@@ -15,13 +15,13 @@ const initialCurrentData: ICurrent = {
   currentExerciseNumber: 0,
   currentStep: 0,
   exercises: [
-    { 'SECTOR 20': 0 },
-    { 'SECTOR 19': 0 },
-    { bull: 0 },
-    { SP: 0 }, // set of points (try set maximum points)
-    { HBR: 0 }, // half big round(1-10)
-    { BR: 0 }, // big round(1-20)
-    { '14': 0 }, // doubles
+    { 'SECTOR 20': 0, steps: 10 },
+    { 'SECTOR 19': 0, steps: 10 },
+    { bull: 0, steps: 10 },
+    { SP: 0, steps: 10 }, // set of points (try set maximum points)
+    { HBR: 0, steps: 10 }, // half big round(1-10)
+    { BR: 0, steps: 20 }, // big round(1-20)
+    { '14': 0, steps: 14 }, // doubles
   ],
 };
 

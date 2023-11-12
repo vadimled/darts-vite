@@ -8,9 +8,11 @@ import React, {
 import { InputNumber } from 'antd';
 import './exercise-card.scss';
 import { useActions, useAppSelector } from '../../store/hooks';
-import { STEPS_LIMIT } from '../../utils/constants';
 import cn from 'classnames';
-import { getStepCounter } from '../../store/selectors/current-selectors';
+import {
+  getCurrStepLimit,
+  getStepCounter,
+} from '../../store/selectors/current-selectors';
 
 interface IExerciseCard {
   name: string;
@@ -26,6 +28,7 @@ const ExerciseCard: FC<IExerciseCard> = ({
 }) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
+  const STEPS_LIMIT = useAppSelector(getCurrStepLimit);
   const stepCounter = useAppSelector(getStepCounter);
 
   const { SET_EXERCISE_RESULT, SET_EXERCISE_FINISHED } = useActions();
@@ -36,6 +39,7 @@ const ExerciseCard: FC<IExerciseCard> = ({
       inputRef.current?.focus();
     }
   }, [stepCounter]);
+  console.log('----STEPS_LIMIT--->', STEPS_LIMIT);
 
   const renderChart = () => {
     return chartData
@@ -87,7 +91,6 @@ const ExerciseCard: FC<IExerciseCard> = ({
             <div
               className={cn('step-counter', {
                 'last-step': stepCounter === STEPS_LIMIT,
-                'zero-step': stepCounter === STEPS_LIMIT,
               })}>
               {active && stepCounter > 0 && stepCounter}
             </div>
