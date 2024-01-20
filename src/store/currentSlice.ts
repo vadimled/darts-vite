@@ -1,10 +1,32 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { ISet } from './userSlice';
-
+/*
+* exercises: [
+    { type: 'BULL', initialScore: 80, steps: 10 },
+    { type: 'SECTOR_19', initialScore: 20, steps: 10 },
+    { type: 'SECTOR_20', initialScore: 90, steps: 10 },
+    { type: 'SP', initialScore: 100, steps: 10 },
+    { type: 'HBR', initialScore: 780, steps: 10 },
+    { type: 'BR', initialScore: 560, steps: 20 },
+    { type: 'FOURTEEN', initialScore: 0, steps: 14 },
+  ]*/
+enum ExerciseType {
+  SECTOR_20 = 'SECTOR 20',
+  SECTOR_19 = 'SECTOR 19',
+  BULL = 'bull',
+  SP = 'SP',
+  HBR = 'HBR',
+  BR = 'BR',
+  FOURTEEN = '14',
+}
+export interface IExercise {
+  type: ExerciseType;
+  initialScore: number;
+  steps: number;
+}
 interface ICurrent {
   exerciseStarted: boolean;
   currentExercise: string;
-  exercises: ISet[];
+  exercises: IExercise[];
   currentStep: number;
   currentExerciseNumber: number;
 }
@@ -15,13 +37,13 @@ const initialCurrentData: ICurrent = {
   currentExerciseNumber: 0,
   currentStep: 0,
   exercises: [
-    { 'SECTOR 20': 0, steps: 10 },
-    { 'SECTOR 19': 0, steps: 10 },
-    { bull: 0, steps: 10 },
-    { SP: 0, steps: 10 }, // set of points (try set maximum points)
-    { HBR: 0, steps: 10 }, // half big round(1-10)
-    { BR: 0, steps: 20 }, // big round(1-20)
-    { '14': 0, steps: 14 }, // doubles
+    { type: ExerciseType.SECTOR_20, initialScore: 0, steps: 10 },
+    { type: ExerciseType.SECTOR_19, initialScore: 0, steps: 10 },
+    { type: ExerciseType.BULL, initialScore: 0, steps: 10 },
+    { type: ExerciseType.SP, initialScore: 0, steps: 10 },
+    { type: ExerciseType.HBR, initialScore: 0, steps: 10 },
+    { type: ExerciseType.BR, initialScore: 0, steps: 20 },
+    { type: ExerciseType.FOURTEEN, initialScore: 0, steps: 14 },
   ],
 };
 

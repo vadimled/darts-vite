@@ -4,7 +4,6 @@ import {
   getCurrentExercise,
   getExercises,
   getExerciseState,
-  getStepCounter,
 } from '../../store/selectors/current-selectors';
 import { Button } from 'antd';
 import { useLayoutEffect, useRef } from 'react';
@@ -14,7 +13,6 @@ import { getExerciseResult } from '../../store/selectors/user-selector';
 export const Exercise = () => {
   const exerciseState = useAppSelector(getExerciseState);
   const currentExercise = useAppSelector(getCurrentExercise);
-  useAppSelector(getStepCounter);
   const exercises = useAppSelector(getExercises);
   const exerciseResult = useAppSelector(getExerciseResult);
   const btnRef = useRef<HTMLButtonElement>(null);

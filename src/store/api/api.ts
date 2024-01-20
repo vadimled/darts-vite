@@ -1,17 +1,25 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { IExercise } from '../currentSlice';
 
 export const dartsAPI = createApi({
   reducerPath: 'darts/api',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://api.github.com/',
+    baseUrl: 'https://localhost:8080/api/',
   }),
-  endpoints: (build) => ({
-    getUserData: build.query({
+  endpoints: (builder) => ({
+    getUserData: builder.query({
       query: (val) => ({
-        url: 'search/users',
+        url: '/users',
         params: {
           q: val,
         },
+      }),
+    }),
+    addExerciseHistory: builder.mutation({
+      query: (exerciseHistory: IExercise[]) => ({
+        url: '/exercise_history',
+        method: 'POST',
+        body: exerciseHistory,
       }),
     }),
   }),

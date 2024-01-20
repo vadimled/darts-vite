@@ -1,6 +1,7 @@
 import { RootState } from '../store';
 import { createDraftSafeSelector } from '@reduxjs/toolkit';
 import { ISet } from '../userSlice';
+import {IExercise} from '../currentSlice';
 
 export const getExerciseState = (state: RootState) =>
   state.current?.set?.exerciseStarted;
@@ -21,7 +22,8 @@ const getCurrentExerciseNumber = (state: RootState) =>
 export const getCurrStepLimit = createDraftSafeSelector(
   getExercises,
   getCurrentExerciseNumber,
-  (exercises: ISet[], index: number) => {
+  (exercises: IExercise[]
+    , index: number) => {
     return exercises[index].steps;
   },
 );
