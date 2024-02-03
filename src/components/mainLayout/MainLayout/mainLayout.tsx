@@ -24,7 +24,7 @@ export const MainLayout: FC<MainLayoutProps> = () => {
                   <Link to='/'>Home</Link>
                 </li>
                 <li>
-                  <Link to='/exercise'>Exercise</Link>
+                  <Link to='/exercise'>Training</Link>
                 </li>
               </ul>
             </nav>
